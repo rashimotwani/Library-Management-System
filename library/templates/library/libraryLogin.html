@@ -54,8 +54,8 @@
   
         <div class="carousel-inner">
           <div class="carousel-item active">
-              
-              <div class="col-xs-3 col-sm-3 col-md-3">
+               
+              {% comment %} <div class="col-xs-3 col-sm-3 col-md-3">
                 <div class="card" style="width: 16rem; text-align: center">
                   <img src='/media/{{books.0.book_image}}' class="card-img-top" alt="...">
                   <div class="card-body">
@@ -65,9 +65,11 @@
                     <button onclick="addIssued()" class="btn btn-primary"> Issue this book </button>
                   </div>
                 </div>
-              </div>
-  
-              {% for i in books|slice:"1:" %}
+              </div> 
+             {% endcomment %}
+              {% for i in books %}
+              <form method="POST">
+                {% csrf_token %}
               <div class="col-xs-3 col-sm-3 col-md-3">
                 <div class="card" style="width: 16rem; text-align: center">
                   <img src='/media/{{i.book_image}}' class="card-img-top" alt="...">
@@ -75,11 +77,11 @@
                     <h5 class="card-title">{{i.book_name}}</h5>
                     <p class="card-text">{{i.desc}}</p>
                     <h7>Book Location</h7><br>
-                    <button onclick="addIssued()" class="btn btn-primary"> Issue this book </button>
+                    <button type="submit" value={{i.id}} name="issueBook" class="btn btn-primary"> Issue this book </button>
                   </div>
                 </div>
               </div>
-  
+            </form>
               {% if forloop.counter|divisibleby:3 and forloop.counter > 0 and not forloop.last %}
                </div><div class="carousel-item">
               {% endif%}

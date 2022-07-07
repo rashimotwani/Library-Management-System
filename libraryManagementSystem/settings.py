@@ -110,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
+# AUTH_USER_MODEL = 'library.User'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
@@ -138,7 +138,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 SITE_ID = 2
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/library/'
+LOGOUT_REDIRECT_URL = '/library/'
 # Provider specific settings
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
