@@ -56,7 +56,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'LibraryManagementSystem.urls'
+ROOT_URLCONF = 'libraryManagementSystem.urls'
 
 TEMPLATES = [
     {
@@ -79,7 +79,7 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-WSGI_APPLICATION = 'LibraryManagementSystem.wsgi.application'
+WSGI_APPLICATION = 'libraryManagementSystem.wsgi.application'
 
 
 # Database
