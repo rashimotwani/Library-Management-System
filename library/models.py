@@ -5,7 +5,12 @@ from django.db import models
 from django.contrib.auth.models import User
 import datetime
 # from django.conf import settings
-
+# permission = Permission.objects.get(name='Can add issued book')
+# permission = Permission.objects.get(name='Can change issued book')
+# permission = Permission.objects.get(name='Can delete issued book')
+# permission = Permission.objects.get(name='Can view issued book')
+# u = User.objects.get(username=new_user_name)
+# u.user_permissions.add(permission)
 # Create your models here.
 class Book(models.Model):
     book_id = models.AutoField
@@ -23,7 +28,7 @@ class Book(models.Model):
 
 class BookCopies(models.Model):
     copy_id = models.AutoField(auto_created=True, primary_key=True)
-    id = models.ForeignKey("Book", on_delete=models.CASCADE)
+    id = models.ForeignKey(Book, on_delete=models.CASCADE)
     avail_status = models.BooleanField(default=True)
 
 
