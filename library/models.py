@@ -22,6 +22,7 @@ class Book(models.Model):
     avail_status = models.BooleanField(default=True)
     quantity = models.IntegerField(default=10)
     book_image = models.ImageField(upload_to='library/images', default="")
+    location = models.CharField(max_length=200, default="")
     
     def __str__(self) :
         return self.book_name

@@ -49,7 +49,6 @@
               {% for i in books %}
               <form method="POST" style="margin: 0; padding: 0;">
                 {% csrf_token %}
-              
               <div class="card mb-3" style="max-width: 50%">
                 <div class="row no-gutters">
                   <div class="col-md-4">
@@ -59,7 +58,7 @@
                     <div class="card-body">
                       <h5 class="card-title">{{i.book_name}}</h5>
                       <p class="card-text">{{i.desc}}</p>
-                      <h7>Book Location</h7><br>
+                      <h7>{{i.location}}</h7><br>
                       <button type="submit" value={{i.id}} name="returnBook" class="btn btn-primary"> Return this book </button>
                       
                     </div>
