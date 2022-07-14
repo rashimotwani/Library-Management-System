@@ -34,5 +34,5 @@ class BookCopies(models.Model):
 
 class IssuedBook(models.Model):
     copy_id = models.ForeignKey(BookCopies, on_delete=models.CASCADE)
-    username = models.ForeignKey(User, on_delete=models.CASCADE)
+    email = models.ForeignKey(User, on_delete=models.CASCADE)
     date_issued = models.DateField(default=datetime.datetime.now)
