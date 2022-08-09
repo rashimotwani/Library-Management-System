@@ -46,6 +46,7 @@
   
         <div class="carousel-inner">
           <div class="carousel-item active">
+            {% if books %}
               {% for i in books %}
               <form method="POST" style="margin: 0; padding: 0;">
                 {% csrf_token %}
@@ -66,9 +67,12 @@
                 </div>
               </div>
             </form>
-              
-  
-              {% endfor %}
+            {% endfor %}
+              {%else%}
+              <p>
+                No Books Issued!!
+              </p>
+              {%endif%}
         </div>
   
         </div>

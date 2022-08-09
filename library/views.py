@@ -23,7 +23,7 @@ def index(request):
                     Book.objects.filter(id = id).update(avail_status = False)
                 Book.objects.filter(id = id).update(quantity = x - 1)
                 break
-    books= Book.objects.filter(avail_status = True)
+    books= Book.objects.all()
     n= len(books)
     nSlides= n//4 + math.ceil((n/4) + (n//4))
     params={'no_of_slides':nSlides, 'range':range(0,nSlides), 'books': books}
